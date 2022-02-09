@@ -1,33 +1,53 @@
-name: "Hello Actions"
+# name: "Hello Actions"
 
-description: "Greet someone"
+# description: "Greet someone"
 
-author: "octocat@github.com"
-
-
-
-inputs:
-
-  MY_NAME:
-
-    description: "Who to greet"
-
-    required: true
-
-    default: "World"
+# author: "octocat@github.com"
 
 
 
-runs:
+# inputs:
 
-  using: "docker"
+#   MY_NAME:
 
-  image: "Dockerfile"
+#     description: "Who to greet"
+
+#     required: true
+
+#     default: "World"
 
 
 
-branding:
+# runs:
 
-  icon: "mic"
+#   using: "docker"
 
-  color: "purple" 
+#   image: "Dockerfile"
+
+
+
+# branding:
+
+#   icon: "mic"
+
+#   color: "purple" 
+
+
+
+jobs:
+
+  build:
+
+    name: Hello world action
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - uses: actions/checkout@v1
+
+      - uses: ./action-a
+
+        with:
+
+          MY_NAME: "Mona"
